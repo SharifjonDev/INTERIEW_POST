@@ -20,4 +20,8 @@
   border-radius: 1.5rem;
   background: #fcbd17;
 }
+
+body {
+  position: relative;
+}
 /*# sourceMappingURL=global.css.map */

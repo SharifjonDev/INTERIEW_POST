@@ -21,6 +21,10 @@
   background: #fcbd17;
 }
 
+body {
+  position: relative;
+}
+
 header {
   background-image: url("https://i.ibb.co/9wKGry8/julian-hochgesang-YOxp-JLoq-X4-Y-unsplash-1.png");
   background-repeat: no-repeat;
@@ -83,7 +87,7 @@ header .btn-explore span i {
 
 header .position-absolute {
   right: 0;
-  top: 16%;
+  top: 120px;
   width: 900px;
   height: 605px;
   background-image: url("https://svgshare.com/i/gbB.svg");

@@ -55,14 +55,12 @@ const Trusted = () => {
     ));
   };
   return (
-    <div className="trusted" id="blog">
-      <div className="container-fluid">
-        <img
-          className="trusted__flag"
-          src="https://i.ibb.co/gvd2JdF/flags-white-1.png"
-          alt=""
-        />
-      </div>
+    <div className="trusted position-relative" id="blog">
+      <img
+        className="trusted__flag"
+        src="https://i.ibb.co/gvd2JdF/flags-white-1.png"
+        alt=""
+      />
       <Container>
         <Row>
           <Col xl="7 offset-5">

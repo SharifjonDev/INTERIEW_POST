@@ -11,9 +11,19 @@
   src: url("../fonts/Gilroy-Light.ttf");
 }
 
+::-webkit-scrollbar {
+  width: 22px;
+  background: #037b35;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1.5rem;
+  background: #fcbd17;
+}
+
 .trusted {
   position: relative;
-  margin-top: 20px;
+  margin-top: 170px;
 }
 
 .trusted .trusted__flag {

@@ -11,12 +11,21 @@
   src: url("../fonts/Gilroy-Light.ttf");
 }
 
+::-webkit-scrollbar {
+  width: 22px;
+  background: #037b35;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1.5rem;
+  background: #fcbd17;
+}
+
 .production {
   background-image: url("https://svgshare.com/i/gbC.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 0 0;
-  height: 1870.35px;
 }
 
 .production .production__title {

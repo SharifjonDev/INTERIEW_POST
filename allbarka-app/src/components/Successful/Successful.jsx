@@ -1,9 +1,27 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import "./style/Successful.scss";
 
 const Successful = () => {
+  const [stories, setStories] = useState([]);
+
+  useEffect(() => {
+    fetchStories();
+  }, []);
+  async function fetchStories() {
+    const storiesData = await axios.get(
+      "https://alibaraka.pythonanywhere.com/api/stories/",
+      {
+        headers: {
+          Accept: "application/json",
+        },
+      }
+    );
+    setStories(storiesData.data);
+  }
+
   return (
     <div className="successful">
       <div className="container-fluid">
@@ -37,29 +55,27 @@ const Successful = () => {
           <Col xl="6">
             <div className="seccessful__right">
               <h1>Other successful stories</h1>
-              <div className="successful__type">
-                <h2>Amateur</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse varius.
-                </p>
-                <a href="#">More Information</a>
-              </div>
-              <div className="successful__type">
-                <h2>Beginner</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse varius.
-                </p>
-                <a href="#">More Information</a>
-              </div>
-              <div className="successful__type">
-                <h2>Professional</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse varius.
-                </p>
-                <a href="#">More Information</a>
+              <div className="seccussful__types">
+                {stories.map((item, index) => (
+                  <div
+                    key={index}
+                    className="successful__type d-flex justify-content-between"
+                  >
+                    <div>
+                      <h2>{item.name}</h2>
+                      <p>{item.text}</p>
+                      <a href="#">More Information</a>
+                    </div>
+                    <img
+                      className="image"
+                      src={
+                        item.image ||
+                        "https://i.ibb.co/pvwH6zr/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"
+                      }
+                      alt=""
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </Col>

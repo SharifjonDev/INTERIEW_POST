@@ -11,6 +11,16 @@
   src: url("../fonts/Gilroy-Light.ttf");
 }
 
+::-webkit-scrollbar {
+  width: 22px;
+  background: #037b35;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1.5rem;
+  background: #fcbd17;
+}
+
 footer {
   z-index: 0;
   background: #037b35;
